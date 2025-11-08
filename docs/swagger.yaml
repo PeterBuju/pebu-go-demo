@@ -1,0 +1,32 @@
+basePath: /api/v1
+host: localhost:8080
+info:
+  contact: {}
+  description: Sample Swagger integration with Gin
+  title: Example Gin Swagger API
+  version: "1.0"
+paths:
+  /ip-lookup/{ip-address}:
+    get:
+      consumes:
+      - application/json
+      description: Returns a geoIp result
+      parameters:
+      - description: ip-address
+        in: path
+        name: ip-address
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties:
+              type: string
+            type: object
+      summary: Lookup IP Address
+      tags:
+      - example
+swagger: "2.0"
